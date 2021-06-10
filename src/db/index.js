@@ -82,6 +82,12 @@ Product.belongsToMany(User, {
   through: { model: Cart, unique: false },
 });
 
+User.hasMany(Cart);
+Cart.belongsTo(User);
+
+Product.hasMany(Cart);
+Cart.belongsTo(Product);
+
 export { Product, Category, User, Cart };
 
 export default sequelize;
